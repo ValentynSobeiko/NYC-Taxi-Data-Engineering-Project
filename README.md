@@ -50,7 +50,12 @@ Thanks to [Mr.Malvik Vaghadia](udemy.com/course/microsoft-fabric-the-ultimate-gu
 | ----------- |
 ![image](https://github.com/user-attachments/assets/f6e48a95-8ab0-4e8f-98ff-f99e17ef8b75)
 
-
+## Create Data Pipeline
+Built a Data Pipeline with these three main activities:
+- Set processing timestamp as a pipeline variable.
+- Bronze layer processing (raw → cleaned).
+- Silver layer processing (structured & enriched).
+- Gold layer processing (business-ready format).
 
 
 
