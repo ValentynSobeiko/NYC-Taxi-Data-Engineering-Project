@@ -96,6 +96,72 @@ df.write.mode("append").save("Tables/bronze/nyc_taxi_yellow")
 |Notebook 2: Silver processing (apply business rules, join lookup tables).|
 | ----------- |
 
+```
+# importing libraries
+from pyspark.sql.functions import to_timestamp, col, current_timestamp, expr
+```
+
+```
+# parameters
+processing_timestamp = ""
+```
+
+````
+
+# sql case statements
+vendor_case_sql = """ 
+case 
+    when VendorID = 1 then 'Creative Mobile Technologies'
+    when VendorID = 2 then 'VeriFone'
+    else 'Unknown'
+end
+"""
+
+payment_method_sql = """
+case 
+    when payment_type = 1 then 'Credit Card'
+    when payment_type = 2 then 'Cash'
+    when payment_type = 3 then 'No Charge'
+    when payment_type = 4 then 'Dispute'
+    when payment_type = 5 then 'Unknown'
+    when payment_type = 6 then 'Voided Trip'
+    else 'Unknown'
+end
+"""
+
+# using sql case statements to add vendor and payment_method columns
+# selecting columns
+df = df.\
+        withColumn("vendor", expr(vendor_case_sql)).\
+        withColumn("payment_method", expr(payment_method_sql)).\
+        select(
+                "vendor",
+                "tpep_pickup_datetime",
+                "tpep_dropoff_datetime",
+                "passenger_count",
+                "trip_distance",
+                col("RatecodeID").alias("ratecode_id"),
+                "store_and_fwd_flag",
+                col("PULocationID").alias("pu_location_id"),
+                col("DOLocationID").alias("do_location_id"),
+                "payment_method",
+                "fare_amount",
+                "extra",
+                "mta_tax",
+                "tip_amount",
+                "tolls_amount",
+                "improvement_surcharge",
+                "total_amount",
+                "congestion_surcharge",
+                col("Airport_fee").alias("airport_fee"),
+                "processing_timestamp"
+                )
+
+# saving the data in the bronze layer table
+# df.write.mode("append").saveAsTable("silver.nyc_taxi_yellow")
+df.write.mode("append").save("Tables/silver/nyc_taxi_yellow")
+
+````
 
 
 |Notebook 3: Gold processing (aggregations, time formatting, final output).|
