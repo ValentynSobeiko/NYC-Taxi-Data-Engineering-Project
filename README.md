@@ -57,5 +57,9 @@ Built a Data Pipeline with these three main activities:
 - Silver layer processing (structured & enriched).
 - Gold layer processing (business-ready format).
 
+|Data Pipeline|
+| ----------- |
+![Screenshot 2025-04-17 191016](https://github.com/user-attachments/assets/ace78cd8-1865-40ec-b2d3-05d1d12ad741)
+
 
 
