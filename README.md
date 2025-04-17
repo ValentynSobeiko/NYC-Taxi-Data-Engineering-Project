@@ -1,6 +1,6 @@
 # NYC-Taxi-Data-Engineering-Project – Microsoft Fabric
 
-This project demonstrates a complete end-to-end data pipeline using Microsoft Fabric to process, transform, and analyze New York City taxi trip data. It showcases key components such as the Lakehouse architecture and automated orchestration using Data Factory pipelines.chatgpt.com
+This project demonstrates a complete end-to-end data pipeline using Microsoft Fabric to process, transform, and analyze New York City taxi trip data. It showcases key components such as the Lakehouse architecture and automated orchestration using Data Factory.
 
 ---
 
