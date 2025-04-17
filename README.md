@@ -4,7 +4,7 @@ This project demonstrates a complete end-to-end data pipeline using Microsoft Fa
 
 ---
 
-## 📌 Project Goals
+## Project Goals
 
 - Ingest and process NYC taxi trip data from ADLS Gen2
 - Implement Medallion architecture: Bronze, Silver, and Gold layers
@@ -12,7 +12,6 @@ This project demonstrates a complete end-to-end data pipeline using Microsoft Fa
 - Trigger data processing on file arrival with Data Activator
 
 ---
-
 
 This project is a comprehensive solution for creating an end-to-end pipeline for data processing, transformation and visualization using Microsoft Fabric, including Lakehouse, Data Factory, Dataflows Gen2, SQL Stored Procedures.
 
