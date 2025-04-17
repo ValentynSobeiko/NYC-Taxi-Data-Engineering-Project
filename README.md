@@ -81,8 +81,7 @@ df = spark.read.format("parquet").load("Files/landing-zone/*")
 df = df.withColumn("processing_timestamp", to_timestamp(lit(processing_timestamp)))
 
 # saving the data in the bronze layer table
-# df.write.mode("append").saveAsTable("bronze.nyc_taxi_yellow")
-df.write.mode("append").save("Tables/bronze/nyc_taxi_yellow")
+df.write.mode("append").saveAsTable("bronze.nyc_taxi_yellow")
 ```
 
 
@@ -151,8 +150,7 @@ df = df.\
                 )
 
 # saving the data in the bronze layer table
-# df.write.mode("append").saveAsTable("silver.nyc_taxi_yellow")
-df.write.mode("append").save("Tables/silver/nyc_taxi_yellow")
+df.write.mode("append").saveAsTable("silver.nyc_taxi_yellow")
 
 ````
 
@@ -212,9 +210,8 @@ df = df.\
                 "processing_timestamp" )
 
 # writing to gold table
-#df.write.mode("append").saveAsTable("gold.nyc_taxi_yellow")
+df.write.mode("append").saveAsTable("gold.nyc_taxi_yellow")
 
-df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 ```
 
 |Data Pipeline|
