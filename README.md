@@ -57,14 +57,7 @@ Built a Data Pipeline with these three main activities:
 - Silver layer processing (structured & enriched).
 - Gold layer processing (business-ready format).
 
-|Data Pipeline|
-| ----------- |
-![Screenshot 2025-04-17 191016](https://github.com/user-attachments/assets/ace78cd8-1865-40ec-b2d3-05d1d12ad741)
-reate and Link Notebooks
-
 ## Created and configured three notebooks:
-
-
 
 |Notebook 1: Bronze processing (read raw, validate, clean, archive).|
 | ----------- |
@@ -167,7 +160,86 @@ df.write.mode("append").save("Tables/silver/nyc_taxi_yellow")
 |Notebook 3: Gold processing (aggregations, time formatting, final output).|
 | ----------- |
 
+```
+# importing libraries
+from pyspark.sql.functions import to_timestamp, col, current_timestamp, expr, date_format
+```
+
+
+```
+# parameters
+processing_timestamp = ""
+```
+
+
+```
+# reading the nyc_taxi_yellow data (for the latest processed batch) into a dataframe df
+df = spark.read.table("silver.nyc_taxi_yellow").filter(f"processing_timestamp = '{processing_timestamp}'")
+
+# reading the lookup data into a dataframe df_pu_lookup
+df_pu_lookup = spark.read.table("silver.taxi_zone_lookup")
+
+# reading the lookup data into a dataframe df_do_lookup
+df_do_lookup = spark.read.table("silver.taxi_zone_lookup")
+
+```
+
+```
+# joining df with df_po_lookup to get pickup information
+df = df.join(df_pu_lookup, df["pu_location_id"]==df_pu_lookup["LocationID"], "left")
+
+# joining df with df_do_lookup to get dropoff information        
+df = df.join(df_do_lookup, df["do_location_id"]==df_do_lookup["LocationID"], "left")
+
+
+# selecting only required columns from df
+# performing transformations
+df = df.\
+        select(
+                "vendor", 
+                # changing to standard date format and aliasing columns
+                date_format("tpep_pickup_datetime","yyyy-MM-dd").alias("pickup_date"), 
+                date_format("tpep_dropoff_datetime","yyyy-MM-dd").alias("dropoff_date"), 
+                df_pu_lookup["Borough"].alias("pickup_borough"), 
+                df_do_lookup["Borough"].alias("dropoff_borough"), 
+                df_pu_lookup["Zone"].alias("pickup_zone"), 
+                df_do_lookup["Zone"].alias("dropoff_zone"), 
+                "payment_method", 
+                "passenger_count", 
+                "trip_distance", 
+                "tip_amount", 
+                "total_amount",
+                "processing_timestamp" )
+
+# writing to gold table
+#df.write.mode("append").saveAsTable("gold.nyc_taxi_yellow")
+
+df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
+```
+
+|Data Pipeline|
+| ----------- |
+![Screenshot 2025-04-17 191016](https://github.com/user-attachments/assets/ace78cd8-1865-40ec-b2d3-05d1d12ad741)
+
+|Set processing_timestamp|
+| ----------- |
+![image](https://github.com/user-attachments/assets/a58c0708-cef4-48ee-817d-a9f1910db3f7)
+
+|Bronze Layer Processing|
+| ----------- |
+![image](https://github.com/user-attachments/assets/9ded7ceb-f06d-4764-9a9c-f49a69bf8af2)
 
 
 
+|Delete Landing Zone Data|
+| ----------- |
+![image](https://github.com/user-attachments/assets/04c4c3f2-84d0-4a25-bea2-4a7c9f25cebf)
+
+|Silver Layer Processing|
+| ----------- |
+![image](https://github.com/user-attachments/assets/60454ca4-0e29-46da-9502-667a24291c1b)
+
+|Gold Layer Processing|
+| ----------- |
+![image](https://github.com/user-attachments/assets/e613d136-b05e-448e-9190-1eaa53afdace)
 
