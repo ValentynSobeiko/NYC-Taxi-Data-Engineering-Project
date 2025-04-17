@@ -33,6 +33,23 @@ Thanks to [Mr.Malvik Vaghadia](udemy.com/course/microsoft-fabric-the-ultimate-gu
 
 ## Setting Up the Development Environment
 
+##  Set Up ADLS Gen2 & Lakehouse
+
+- Set Up ADLS Gen2 & Lakehouse
+- Created an Azure Data Lake Storage Gen2 account.
+- Added landing-zone container.
+- Built a Lakehouse in Microsoft Fabric named NYC_Project_Lekahouse.
+- Inside the Lakehouse, created three schemas: Bronze, Silver, and Gold for each data processing layer.
+- Created a shortcut in Fabric Lakehouse to the landing-zone container.
+
+| Container|
+| ----------- |
+![image](https://github.com/user-attachments/assets/d4c9015d-7059-43e2-b52d-652454c81c3c)
+
+|Fabric Lakehouse |
+| ----------- |
+![image](https://github.com/user-attachments/assets/f6e48a95-8ab0-4e8f-98ff-f99e17ef8b75)
+
 
 
 
