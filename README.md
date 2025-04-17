@@ -229,8 +229,6 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 | ----------- |
 ![image](https://github.com/user-attachments/assets/9ded7ceb-f06d-4764-9a9c-f49a69bf8af2)
 
-
-
 |Delete Landing Zone Data|
 | ----------- |
 ![image](https://github.com/user-attachments/assets/04c4c3f2-84d0-4a25-bea2-4a7c9f25cebf)
