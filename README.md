@@ -60,6 +60,30 @@ Built a Data Pipeline with these three main activities:
 |Data Pipeline|
 | ----------- |
 ![Screenshot 2025-04-17 191016](https://github.com/user-attachments/assets/ace78cd8-1865-40ec-b2d3-05d1d12ad741)
+reate and Link Notebooks
+
+## Created and configured three notebooks:
+
+
+
+|Notebook 1: Bronze processing (read raw, validate, clean, archive).|
+| ----------- |
+```
+# importing libraries
+from pyspark.sql.functions import to_timestamp, col, lit
+
+```
+
+
+|Notebook 2: Silver processing (apply business rules, join lookup tables).|
+| ----------- |
+
+
+
+|Notebook 3: Gold processing (aggregations, time formatting, final output).|
+| ----------- |
+
+
 
 
 
