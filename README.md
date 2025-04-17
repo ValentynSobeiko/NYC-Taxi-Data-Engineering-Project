@@ -74,6 +74,24 @@ from pyspark.sql.functions import to_timestamp, col, lit
 
 ```
 
+```
+# parameters
+processing_timestamp = ""
+```
+
+```
+# parameters
+# df now is a Spark DataFrame containing parquet data from "Files/nyc-yellow-taxi/landing_files/".
+df = spark.read.format("parquet").load("Files/landing-zone/*")
+
+# adding a processing timestamp
+df = df.withColumn("processing_timestamp", to_timestamp(lit(processing_timestamp)))
+
+# saving the data in the bronze layer table
+# df.write.mode("append").saveAsTable("bronze.nyc_taxi_yellow")
+df.write.mode("append").save("Tables/bronze/nyc_taxi_yellow")
+```
+
 
 |Notebook 2: Silver processing (apply business rules, join lookup tables).|
 | ----------- |
