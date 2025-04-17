@@ -241,3 +241,9 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 | ----------- |
 ![image](https://github.com/user-attachments/assets/e613d136-b05e-448e-9190-1eaa53afdace)
 
+
+
+
+
+
+
