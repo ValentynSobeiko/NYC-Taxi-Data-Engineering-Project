@@ -73,7 +73,6 @@ processing_timestamp = ""
 ```
 
 ```
-# parameters
 # df now is a Spark DataFrame containing parquet data from "Files/nyc-yellow-taxi/landing_files/".
 df = spark.read.format("parquet").load("Files/landing-zone/*")
 
@@ -81,7 +80,7 @@ df = spark.read.format("parquet").load("Files/landing-zone/*")
 df = df.withColumn("processing_timestamp", to_timestamp(lit(processing_timestamp)))
 
 # saving the data in the bronze layer table
-df.write.mode("append").saveAsTable("bronze.nyc_taxi_yellow")
+df.write.mode("append").save("Tables/bronze/nyc_taxi_yellow")
 ```
 
 
@@ -99,6 +98,13 @@ processing_timestamp = ""
 ```
 
 ````
+
+# df now is a Spark DataFrame containing parquet data from the bronze table
+df = spark.read.format("delta").load("Tables/bronze/nyc_taxi_yellow")
+
+# filtering to only process latest batch of data
+df = df.filter(f"processing_timestamp = '{processing_timestamp}'")
+
 
 # sql case statements
 vendor_case_sql = """ 
@@ -150,7 +156,7 @@ df = df.\
                 )
 
 # saving the data in the bronze layer table
-df.write.mode("append").saveAsTable("silver.nyc_taxi_yellow")
+df.write.mode("append").save("Tables/silver/nyc_taxi_yellow")
 
 ````
 
@@ -172,13 +178,13 @@ processing_timestamp = ""
 
 ```
 # reading the nyc_taxi_yellow data (for the latest processed batch) into a dataframe df
-df = spark.read.table("silver.nyc_taxi_yellow").filter(f"processing_timestamp = '{processing_timestamp}'")
+df = spark.read.format("delta").load("Tables/silver/nyc_taxi_yellow").filter(f"processing_timestamp = '{processing_timestamp}'")
 
 # reading the lookup data into a dataframe df_pu_lookup
-df_pu_lookup = spark.read.table("silver.taxi_zone_lookup")
+df_pu_lookup = spark.read.format("delta").load("Tables/silver/taxi_zone_lookup")
 
 # reading the lookup data into a dataframe df_do_lookup
-df_do_lookup = spark.read.table("silver.taxi_zone_lookup")
+df_do_lookup = spark.read.format("delta").load("Tables/silver/taxi_zone_lookup")
 
 ```
 
@@ -210,7 +216,7 @@ df = df.\
                 "processing_timestamp" )
 
 # writing to gold table
-df.write.mode("append").saveAsTable("gold.nyc_taxi_yellow")
+df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 
 ```
 
