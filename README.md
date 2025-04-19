@@ -276,7 +276,7 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 ![image](https://github.com/user-attachments/assets/02f30cfb-4b26-42ad-bcd9-b9acf1f6b43f)
 
 
-
+# Next Step: Creating a Trigger for Automated Pipeline Runs
 
 
 
