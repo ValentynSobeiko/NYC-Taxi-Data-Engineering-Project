@@ -52,6 +52,7 @@ Thanks to [Mr.Malvik Vaghadia](https://www.udemy.com/course/microsoft-fabric-the
 Built a Data Pipeline with these three main activities:
 - Set processing timestamp as a pipeline variable.
 - Bronze layer processing (raw → cleaned).
+- Delete landing zone to manage and clean the storage.
 - Silver layer processing (structured & enriched).
 - Gold layer processing (business-ready format).
 
