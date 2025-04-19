@@ -256,6 +256,23 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 | -----------  |
 ![image](https://github.com/user-attachments/assets/47df7af0-732a-4875-8289-673caaddcc93)
 
+## February Data Added & Pipeline Re-run
+| |
+| -----------  |
+![image](https://github.com/user-attachments/assets/aeea1479-dea4-4461-b256-30445aeeadcf)
+![image](https://github.com/user-attachments/assets/ef9129dc-413c-4647-a42e-6bc68df51b8b)
+
+## Gold Table After Pipeline Run – February
+| |
+| -----------  |
+
+
+## Timestamp Results with Total Records – Table After Pipeline Run – February
+| |
+| -----------  |
+
+
+
 
 
 
