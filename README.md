@@ -246,7 +246,10 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 
 
 
-
+## Gold Table After Pipeline Run – January
+| |
+| -----------  |
+![image](https://github.com/user-attachments/assets/02a04ec6-a24a-4299-b1ba-00d7f1ef248c)
 
 
 
