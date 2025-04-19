@@ -301,6 +301,46 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 
 
 
+# Conclusion 
+In this project, I successfully designed and implemented an end-to-end data pipeline for processing NYC Taxi trip data. The pipeline ingests raw data, performs necessary transformations, and appends the processed data to a Gold table. I also implemented an event-based trigger to automate the execution of the pipeline whenever new data is uploaded to the storage container.
+
+Key Achievements:
+--Data Integration & Transformation:
+
+-Successfully processed data for January, February, and March.
+
+-Implemented transformations to standardize and clean the data for further analysis.
+
+Automation & Efficiency:
+
+Designed and documented an event-based trigger to automate pipeline execution when new data is uploaded.
+
+Due to permission restrictions, I manually triggered the pipeline, simulating the automation process and ensuring the pipeline runs correctly with new data.
+
+Error Handling & Testing:
+
+Addressed challenges with data delivery and ensured proper error handling within the pipeline.
+
+Manually validated the functionality of the pipeline and trigger logic through testing and debugging.
+
+Documentation & Reporting:
+
+Thoroughly documented each step of the process, from data upload to transformation and trigger setup.
+
+Provided clear visual evidence and screenshots to demonstrate successful pipeline execution.
+
+Technical Skills Demonstrated:
+Azure Data Lake Storage Gen2
+
+Microsoft Fabric / Azure Data Factory
+
+Pipeline Automation & Event-Based Triggers
+
+Data Transformation & Integration
+
+Problem-Solving & Debugging
+
+This project has provided me with hands-on experience in data engineering and automation. It demonstrates my ability to design scalable and efficient data workflows, integrate new data into the pipeline, and automate processing with event-based triggers. Once the necessary permissions for trigger execution are in place, the pipeline can be fully automated, enhancing efficiency and reducing manual intervention.
 
 
 
