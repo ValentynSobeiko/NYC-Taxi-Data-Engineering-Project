@@ -29,8 +29,6 @@ Thanks to [Mr.Malvik Vaghadia](https://www.udemy.com/course/microsoft-fabric-the
 | ----------- |
 ![Screenshot 2025-04-17 200501](https://github.com/user-attachments/assets/4980564a-d22a-4083-8588-a0620eb10855)
 
-# Project Implementation Stages 
-
 ## Setting Up the Development Environment
 
 ##  Set Up ADLS Gen2 & Lakehouse
