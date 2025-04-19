@@ -283,6 +283,21 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 ![image](https://github.com/user-attachments/assets/6e6a8b1e-fe19-465e-9dc7-58be7c0f286f)
 ![image](https://github.com/user-attachments/assets/db1f6242-48c2-4fe9-9f98-941c7528a60f)
 ![image](https://github.com/user-attachments/assets/2a3d6327-4e64-4a93-aa0f-3303d65db4ad)
+![image](https://github.com/user-attachments/assets/1b50d947-294b-42de-a602-96a0b3438d44)
+
+## March Data Added & Trigger Pipeline Re-run
+![image](https://github.com/user-attachments/assets/cc4ea136-a822-4885-9c87-b924a1c9a2e0)
+![image](https://github.com/user-attachments/assets/e549f3eb-1c0a-4231-a92d-a18f4700a068)
+
+## Gold Table After Trigger Run Pipeline – March
+| |
+| -----------  |
+![image](https://github.com/user-attachments/assets/6325c4f8-d4bd-424f-937f-b63b653035e3)
+
+## Timestamp Results with Total Records – Table After Trigger Run Pipeline – March
+| |
+| -----------  |
+![image](https://github.com/user-attachments/assets/b0239896-d8f8-402c-84d5-a64abbe299d4)
 
 
 
