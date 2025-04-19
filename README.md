@@ -278,5 +278,10 @@ df.write.mode("append").save("Tables/gold/nyc_taxi_yellow")
 
 # Next Step: Creating a Trigger for Automated Pipeline Runs
 
+| The first step in creating a trigger is to connect to the storage account where your data files are being uploaded|
+| -----------  |
+![image](https://github.com/user-attachments/assets/6e6a8b1e-fe19-465e-9dc7-58be7c0f286f)
+
+
 
 
