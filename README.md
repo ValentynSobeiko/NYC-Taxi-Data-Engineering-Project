@@ -15,7 +15,7 @@ This project demonstrates a complete end-to-end data pipeline using Microsoft Fa
 
 This project is a comprehensive solution for creating an end-to-end pipeline for data processing, transformation and visualization using Microsoft Fabric, including Lakehouse, Data Factory, Dataflows Gen2, SQL Stored Procedures.
 
-Thanks to [Mr.Malvik Vaghadia](udemy.com/course/microsoft-fabric-the-ultimate-guide) for the project inspiration.
+Thanks to [Mr.Malvik Vaghadia](https://www.udemy.com/course/microsoft-fabric-the-ultimate-guide) for the project inspiration.
 
 ## Technology Stack
 - Microsoft Fabric (Lakehouse, Data Factory, Notebooks)
