@@ -26,7 +26,6 @@ Thanks to [Mr.Malvik Vaghadia](https://www.udemy.com/course/microsoft-fabric-the
 
 ## Solution architecture
 | |
-| ----------- |
 <img width="13650" height="8310" alt="image" src="https://github.com/user-attachments/assets/b2978723-4ae6-47b1-9394-76641863b317" />
 
 
