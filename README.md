@@ -27,7 +27,8 @@ Thanks to [Mr.Malvik Vaghadia](https://www.udemy.com/course/microsoft-fabric-the
 ## Solution architecture
 | |
 | ----------- |
-![Screenshot 2025-04-17 200501](https://github.com/user-attachments/assets/4980564a-d22a-4083-8588-a0620eb10855)
+<img width="13650" height="8310" alt="image" src="https://github.com/user-attachments/assets/b2978723-4ae6-47b1-9394-76641863b317" />
+
 
 # Setting Up the Development Environment
 
